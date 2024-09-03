@@ -1,0 +1,28 @@
+{
+    "LogIn":"تسجيل دخول",
+    "SignUp":"انشاء حساب",
+    "Welcome": "مرحبا ف studypath",
+   "CreateYourAcount":"انشاء حساب"
+   ,
+   "Firstname":"الاسم الاول"
+   ,"Lastname":"اسم العائله",
+   "Emailorphonenumber":"البريد الاكتروني او رقم الهاتف",
+    "Password":"الرقم السري",
+    "Comfertpassword":"تاكيد كلمه السر",
+    "Alreadyhaveacount":"لدي حساب بالفعل",
+    "LogIntoyouracount":"تسجيل الدخول الي حسابك",
+    "Welcomeback":"مرحبا بعودتك",
+    "rememberme":"ذكرني لاحقا",
+    "Forgetpassword":"نسيت كلمه السر"
+    ,"orloginwith":"او سجل ب",
+    "Donthaveanacount":"ليس لدي حساب",
+    "verifyyouidentify": "تحقق من هويتك",
+  "selectmethode": "اختر طريقة لإرسال رمز التحقق إليك",
+  "verifybyemail": "التحقق عن طريق البريد الإلكتروني",
+  "verifybysms": "التحقق عن طريق الرسائل القصيرة",
+  "VerifyByphonecall": "التحقق عن طريق مكالمة هاتفية",
+  "Continue": "استمر",
+  "IRemembermypassword": "أتذكر كلمة المرور الخاصة بي"
+    
+   
+}

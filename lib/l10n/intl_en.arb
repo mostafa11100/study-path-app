@@ -1,0 +1,47 @@
+{
+    "LogIn":"LogIn",
+    "SignUp":"SignUp",
+     "Welcome": "Welcome To StudyPath"
+     ,"CreateYourAcount":"Create Your Acount",
+
+     "Firstname":"First name",
+     "Lastname":"Last name",
+     "Emailorphonenumber":"E-mail or phone number",
+      "Password": "Password",
+      "Comfertpassword":"Confirt password",
+      "Alreadyhaveacount":"Already have acount"
+      ,"LogIntoyouracount":"Login to your acount",
+      "Welcomeback":"Welcome back",
+      "rememberme":"Remember me",
+      "Forgetpassword":"Forget password",
+      "orloginwith":"Or login with",
+      "Donthaveanacount":"Don''t have an acount",
+      "verifyyouidentify":"verify your identity",
+      "selectmethode":"Select a Methode you like to send you verification code",
+      "verifybyemail":"Verify By E-mail",
+      "verifybysms":"Verify By phone sms",
+      "VerifyByphonecall":"Verify By phone call",
+      "Continue":"Continue",
+      "IRemembermypassword":"I Remember my password",
+       "Congrateulations": "Congrateulations",
+       "youhavesuccessfullyupdate":"you have successfully update your password now you can login",
+         "EnteryourverificationCode":  "Enter your verification Code",
+        "sendedatextverificationcodetothephone" :"we send a text message with your verification code to the phone number ending with (*********45)"
+,
+ "Verifycode": 
+ "Verify code","Dontgetthecode": 
+ "Dont ''get the code?",
+  "Resendcode":
+   "Resend code",
+   "Pleaseconfirmthepassword"
+  :"Please confirm the password","Submit":"Submit",
+  "CreatenewPassword":
+  "Create new Password",
+  "Category":"Category",
+  "Offers":"Offers",
+  "BuyNow":"Buy Now",
+  "Coursestogetsrarted":"Courses to get srarted",
+  "Featuredcourses":"Featured courses"
+  
+ 
+    }

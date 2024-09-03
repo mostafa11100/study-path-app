@@ -1,0 +1,100 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_path/const/color_app.dart';
+import 'package:study_path/const/fontstyleconst.dart';
+
+class Themeappdata {
+  static ThemeData Darktheme = ThemeData(
+    //useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.black,
+      brightness: Brightness.dark,
+    ),
+    fontFamily: 'Asul',
+  );
+  static ThemeData lighttheme = ThemeData(
+    //useMaterial3: true,
+    scaffoldBackgroundColor: Colors.white,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ColorApp.primarycolor6,
+      brightness: Brightness.light,
+    ),
+    textTheme: TextTheme(
+        displayLarge: TextStyle(
+            fontSize: 35.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.24),
+        displayMedium: TextStyle(
+            fontSize: 25.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        displaySmall: TextStyle(
+            fontSize: 19.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        headlineLarge: TextStyle(
+            fontSize: 16.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        headlineMedium: TextStyle(
+            fontSize: 13.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        headlineSmall: TextStyle(
+            fontSize: 12.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        titleLarge: TextStyle(
+            fontSize: 12.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0),
+        titleMedium: TextStyle(
+            fontSize: 10.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.15),
+        titleSmall: TextStyle(
+            fontSize: 9.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.1),
+        bodyLarge: TextStyle(
+            fontSize: 11.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.5),
+        bodyMedium: TextStyle(
+            fontSize: 14.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.25),
+        bodySmall: TextStyle(
+            fontSize: 12.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.4),
+        labelLarge: TextStyle(
+            fontSize: 18.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.1),
+        labelMedium: TextStyle(
+            fontSize: 16.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.5),
+        labelSmall: TextStyle(
+            fontSize: 13.sp,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.5)),
+    fontFamily: 'Roboto',
+  );
+}
