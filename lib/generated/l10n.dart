@@ -429,6 +429,36 @@ class S {
       args: [],
     );
   }
+
+  /// `All`
+  String get All {
+    return Intl.message(
+      'All',
+      name: 'All',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tracking`
+  String get Tracking {
+    return Intl.message(
+      'Tracking',
+      name: 'Tracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related cources`
+  String get Relatedcources {
+    return Intl.message(
+      'Related cources',
+      name: 'Relatedcources',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_path/const/color_app.dart';
+import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/const/images_assets.dart';
+import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/body_ofcources.dart';
+import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/customappbar.dart';
+import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/relatedcourse_screen.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class MycourcesScreen extends StatefulWidget {
   MycourcesScreen({super.key});
@@ -9,36 +16,35 @@ class MycourcesScreen extends StatefulWidget {
   State<MycourcesScreen> createState() => _MycourcesScreenState();
 }
 
-class _MycourcesScreenState extends State<MycourcesScreen> {
+class _MycourcesScreenState extends State<MycourcesScreen>
+    with TickerProviderStateMixin {
   bool visible = true;
+  TabController? tapcon;
+  @override
+  void initState() {
+    tapcon = TabController(length: 3, vsync: this);
+    tapcon!.addListener(() {
+      // if (tapcon!.index != 0) {
+      setState(() {});
+      //}
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        bottom: PreferredSize(
-            preferredSize: Size(MediaQuery.of(context).size.width, 200.h),
-            child: Column(
-              children: [
-                AnimatedContainer(
-                  color: Colors.red,
-                  width: MediaQuery.of(context).size.width,
-                  height: visible ? 100 : 0,
-                  duration: const Duration(milliseconds: 800),
-                )
-              ],
-            )),
-      ),
-      body: Center(
-        child: InkWell(
-          onTap: () {
-            setState(() {
-              visible = !visible;
-            });
-          },
-          child: Text("click"),
-        ),
-      ),
+      appBar: customappbar(context: context, tapcont: tapcon!),
+      body: TabBarView(controller: tapcon!, children: [
+        bodyofcources(context),
+        bodyofcources(context),
+        relatedcourcesscreen()
+      ]),
+
+      // Expanded(child:TabBarView(children:
+      // [
+
+      // ]))
     );
   }
 }

@@ -21,6 +21,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TextStyleConst {
   static TextStyle? textStyleconst30 = TextStyle(
       fontSize: 30.sp, fontWeight: FontWeight.w800, color: Colors.black);
+  static TextStyle? textStyleconst9 = TextStyle(
+      fontSize: 9.sp, fontWeight: FontWeight.w800, color: Colors.black);
 
   static TextStyle? textStyleconst28 = TextStyle(
       fontSize: 28.sp, fontWeight: FontWeight.w800, color: Colors.black);
