@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/color_app.dart';
+import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
 import 'package:study_path/generated/l10n.dart';
 
@@ -9,7 +10,7 @@ Widget courseitem(
   bool active = false;
   return SizedBox(
     // height: 200,
-    width: 220,
+    width: 205.w,
 
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,16 +22,13 @@ Widget courseitem(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10.r),
                   topRight: Radius.circular(10.r))),
-          height: 150.h,
+          height: 130.h,
         ),
         ListTile(
-          contentPadding: const EdgeInsets.all(6),
+          contentPadding: EdgeInsets.symmetric(horizontal: 6.w),
           leading: Text(
             coursemodel.coursename!,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontWeight: FontWeight.w700),
+            style: TextStyleConst.textStyleconst15,
           ),
           trailing: StatefulBuilder(builder: (context, setstate) {
             return InkWell(
@@ -42,6 +40,7 @@ Widget courseitem(
               },
               child: Icon(
                 Icons.favorite_outline,
+                size: 23.r,
                 color: active == true
                     ? ColorApp.primarycolor6
                     : ColorApp.neturalcolor11,
@@ -50,22 +49,22 @@ Widget courseitem(
           }),
         ),
         Padding(
-          padding: const EdgeInsets.all(7.0),
+          padding: const EdgeInsets.symmetric(horizontal: 7.0, vertical: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 coursemodel.instracure!,
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: ColorApp.neturalcolor9, fontWeight: FontWeight.w600),
+                style: TextStyleConst.textStyleconst12!
+                    .copyWith(color: ColorApp.neturalcolor10),
               ),
               SizedBox(
                 height: 6.h,
               ),
               Text(
                 coursemodel.time!,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: ColorApp.neturalcolor9, fontWeight: FontWeight.w700),
+                style: TextStyleConst.textStyleconst12!
+                    .copyWith(color: ColorApp.neturalcolor10),
               ),
               SizedBox(
                 height: 7.w,
@@ -73,30 +72,25 @@ Widget courseitem(
               Row(
                 children: [
                   Text(
-                    coursemodel.price!,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: ColorApp.neturalcolor9,
-                        fontWeight: FontWeight.w700),
+                    "${coursemodel.price!}\$",
+                    style: TextStyleConst.textStyleconst13!.copyWith(
+                        color: ColorApp.neturalcolor12,
+                        decoration: TextDecoration.lineThrough),
                   ),
                   SizedBox(
                     width: 10.w,
                   ),
                   Text(
-                    coursemodel.descaond!,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: ColorApp.neturalcolor12,
-                        fontWeight: FontWeight.w700),
+                    "${coursemodel.descaond!}\$",
+                    style: TextStyleConst.textStyleconst13!,
                   ),
-                  SizedBox(
-                    width: 70.w,
-                  ),
-                  Text(
-                    S.current.BuyNow,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: ColorApp.primarycolor6,
-                        decoration: TextDecoration.underline),
-                  )
+                  const Spacer(),
+                  Text(S.current.BuyNow,
+                      style: TextStyleConst.textStyleconst13!.copyWith(
+                          color: ColorApp.primarycolor6,
+                          fontWeight: FontWeight.w700,
+                          decoration: TextDecoration.underline,
+                          decorationColor: ColorApp.primarycolor6))
                 ],
               ),
             ],

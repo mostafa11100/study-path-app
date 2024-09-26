@@ -4,7 +4,8 @@ import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/generated/l10n.dart';
 
-Widget customtapBar(TabController tabcont) {
+Widget customtapBar(
+    {required TabController tabcont, required List<Widget> tabs}) {
   return TabBar(
       isScrollable: true,
       tabAlignment: TabAlignment.start,
@@ -19,15 +20,5 @@ Widget customtapBar(TabController tabcont) {
       unselectedLabelStyle: TextStyleConst.textStyleconst17!
           .copyWith(color: ColorApp.neturalcolor9),
       controller: tabcont,
-      tabs: [
-        Tab(
-          text: S.current.All,
-        ),
-        Tab(
-          text: S.current.Tracking,
-        ),
-        Tab(
-          text: S.current.Relatedcources,
-        ),
-      ]);
+      tabs: tabs);
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_path/const/color_app.dart';
+import 'package:study_path/const/fontstyleconst.dart';
 
 Widget listtile_ofuserinfo({ontap, image, name}) {
   //المفروض الاسم والصوره هيكونو ف موديل
@@ -15,24 +17,19 @@ Widget listtile_ofuserinfo({ontap, image, name}) {
         backgroundImage: NetworkImage(image),
       ),
       title: Text(
-        "hi$name",
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium!
-            .copyWith(fontWeight: FontWeight.w500),
+        "hi $name",
+        style: TextStyleConst.textStyleconst16,
       ),
       subtitle: Padding(
-        padding: const EdgeInsets.only(top: 8.0, bottom: 0),
+        padding: const EdgeInsets.only(top: 4.0, bottom: 0),
         child: Text(
           name,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .copyWith(fontWeight: FontWeight.w600),
+          style: TextStyleConst.textStyleconst14!
+              .copyWith(color: ColorApp.neturalcolor10),
         ),
       ),
       trailing: Icon(
-        Icons.notification_important_outlined,
+        Icons.notifications_outlined,
         size: 25.r,
       ),
       isThreeLine: false,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/appbaritem.dart';
 import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/customtapbar.dart';
+import 'package:study_path/generated/l10n.dart';
 
 AppBar customappbar({
   required BuildContext context,
@@ -40,7 +41,17 @@ AppBar customappbar({
               // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: customtapBar(tapcont),
+                child: customtapBar(tabs: [
+                  Tab(
+                    text: S.current.All,
+                  ),
+                  Tab(
+                    text: S.current.Tracking,
+                  ),
+                  Tab(
+                    text: S.current.Relatedcources,
+                  ),
+                ], tabcont: tapcont),
               )
             ],
           ),

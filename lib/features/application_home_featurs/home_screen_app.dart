@@ -1,9 +1,9 @@
 import 'package:awesome_bottom_bar/widgets/inspired/inspired.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
-import 'package:study_path/const/color_app.dart';
 import 'package:study_path/features/application_home_featurs/homescreens/view/ui/home_screen.dart';
+import 'package:study_path/features/application_home_featurs/setting_andprofile_screen/view/ui/setting_screen.dart';
+import 'package:study_path/features/application_home_featurs/wishlist_screen/view/ui/my_wishlst_screen.dart';
 
 class HomeScreenApp extends StatefulWidget {
   HomeScreenApp({super.key});
@@ -49,12 +49,8 @@ class _HomeScreenAppState extends State<HomeScreenApp>
         Container(
           color: Colors.blue,
         ),
-        Container(
-          color: Colors.green,
-        ),
-        Container(
-          color: Colors.black,
-        )
+        const MyWishlistScreen(),
+        const SettingScreen()
       ]),
       bottomNavigationBar: BottomBarInspiredInside(
         height: 60,

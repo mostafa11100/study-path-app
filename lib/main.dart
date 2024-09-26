@@ -1,16 +1,18 @@
-import 'package:flutter/foundation.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/approuter.dart';
-import 'package:study_path/const/color_app.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:study_path/const/themedata.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:study_path/firebase_options.dart';
 import 'package:study_path/generated/l10n.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized;
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     // DevicePreview(
     // enabled: !kReleaseMode,
@@ -33,6 +35,7 @@ class StudyPathAPP extends StatelessWidget {
         // Use builder only if you need to use library outside ScreenUtilInit context
         builder: (_, child) {
           return MaterialApp.router(
+              debugShowCheckedModeBanner: false,
               localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
@@ -40,7 +43,7 @@ class StudyPathAPP extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
               ],
               supportedLocales: S.delegate.supportedLocales,
-              locale: DevicePreview.locale(context),
+              locale: const Locale("en"),
               builder: DevicePreview.appBuilder,
               routerConfig: Approuter.routs,
               theme: Themeappdata.lighttheme);

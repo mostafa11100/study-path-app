@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
 import 'package:study_path/features/application_home_featurs/homescreens/view/ui/homescreen_widgets/course_item.dart';
 
@@ -15,11 +16,7 @@ Widget courses(
         padding: const EdgeInsets.all(8.0),
         child: Text(
           coursestitle,
-          style: titlestyle ??
-              Theme.of(context)
-                  .textTheme
-                  .headlineLarge!
-                  .copyWith(fontWeight: FontWeight.w700),
+          style: titlestyle ?? TextStyleConst.textStyleconst17,
         ),
       ),
       const SizedBox(
@@ -27,7 +24,7 @@ Widget courses(
       ),
       SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 310.h,
+        height: 265.h,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: courses.length,

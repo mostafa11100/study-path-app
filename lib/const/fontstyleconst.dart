@@ -47,6 +47,10 @@ class TextStyleConst {
 
   static TextStyle? textStyleconst13 = TextStyle(
       fontSize: 13.sp, fontWeight: FontWeight.w800, color: Colors.black);
+  static TextStyle? textStyleconst14 = TextStyle(
+      fontSize: 14.sp, fontWeight: FontWeight.w800, color: Colors.black);
+  static TextStyle? textStyleconst12 = TextStyle(
+      fontSize: 12.sp, fontWeight: FontWeight.w800, color: Colors.black);
 
   static TextStyle? textStyleconst11 = TextStyle(
       fontSize: 11.sp, fontWeight: FontWeight.w800, color: Colors.black);

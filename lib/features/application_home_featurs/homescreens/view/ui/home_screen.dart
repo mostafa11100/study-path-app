@@ -19,19 +19,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
-                height: 30.h,
+                height: 25.h,
               ),
               listtile_ofuserinfo(name: "mostafa", image: image, ontap: () {}),
               SizedBox(
-                height: 30.h,
+                height: 20.h,
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: searchfeildcustom(
                     context: context, filterontap: () {}, complete: () {}),
               ),
@@ -50,6 +50,9 @@ class HomeScreen extends StatelessWidget {
                     GoRouter.of(context)
                         .push(Approuter.categorydcreen, extra: "bussines");
                   }),
+              SizedBox(
+                height: 10.h,
+              ),
               courses(
                   context: context,
                   courses: [
