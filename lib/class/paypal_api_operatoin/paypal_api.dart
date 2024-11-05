@@ -10,9 +10,9 @@ import 'package:study_path/class/paypalmodels/response_createorder_model.dart';
 class ApiService {
   static Future<String> getdata() async {
     String clintid =
-        "AS3k4dFDQgzj0rdcatfqGHA6ebice5t6t2Tuc_7_ymggiyB_6AV9MMI-EtNY_XbkNE5c0RGrc_YUAbge";
+        clintid;
     String secretkey =
-        "EJtjx01v5j7Bfl9eASX6JzgtKibE9HPuHyEBWcR04_PZsi94LodPjXTX214t-EalEDs6jel20ydawRoR";
+        scretkey;
     String authrization =
         'Basic ${base64Encode(utf8.encode("$clintid:$secretkey"))}';
     Map<String, String> body = {"grant_type": "client_credentials"};
@@ -58,8 +58,7 @@ class ApiService {
           returnUrl: urlsucces.toString(),
 
           cancelUrl: urlcansel.toString(),
-          //ممكن تكون المشكله هنا  ف الكود اللي تحت
-        )))).toJson();
+          )))).toJson();
     Map<String, String> header = {
       "Content-Type": "application/json",
       'Authorization': authrization,
