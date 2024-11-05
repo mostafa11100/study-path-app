@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/courses_screen/view/cubit/cubit_get_mycources/get_my_cources_cubit.dart';
 import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/appbaritem.dart';
 import 'package:study_path/features/application_home_featurs/courses_screen/view/ui/mycource_widgets/customtapbar.dart';
 import 'package:study_path/generated/l10n.dart';
 
-AppBar customappbar({
-  required BuildContext context,
-  required TabController tapcont,
-}) {
+AppBar customappbar(
+    {required BuildContext context,
+    required TabController tapcont,
+    required List<MyCourcesModeldetails> models}) {
   return AppBar(
     forceMaterialTransparency: true,
     leadingWidth: 66.w,
-    leading: SizedBox(),
+    leading: const SizedBox(),
     backgroundColor: Colors.white,
     title: Text(
       "My Courses",
@@ -33,7 +34,7 @@ AppBar customappbar({
                   child: tapcont.index == 0
                       ? Padding(
                           padding: const EdgeInsets.all(15.0),
-                          child: appbaritem(context),
+                          child: appbaritem(context: context, model: models),
                         )
                       : null),
               // SizedBox(

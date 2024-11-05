@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/fontstyleconst.dart';
-import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
 import 'package:study_path/features/application_home_featurs/homescreens/view/ui/homescreen_widgets/course_item.dart';
+import 'package:study_path/utilize/getcources_and_instracture/get_instracture_and_cources.dart';
 
 Widget courses(
     {context,
-    required List<CourseModel> courses,
+    required List<CourseAllDetails> courses,
     required String coursestitle,
     TextStyle? titlestyle}) {
   return Column(
@@ -24,7 +24,7 @@ Widget courses(
       ),
       SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 265.h,
+        height: 270.h,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: courses.length,

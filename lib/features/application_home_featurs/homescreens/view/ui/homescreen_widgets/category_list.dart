@@ -35,7 +35,7 @@ Widget category(
                     child: Container(
                       margin: const EdgeInsets.all(4),
                       // width: 150.w,
-                      padding: EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(3),
                       height: 50.h,
                       decoration: BoxDecoration(
                         border: Border.all(color: ColorApp.primarycolor6),

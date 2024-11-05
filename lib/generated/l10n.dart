@@ -459,6 +459,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Verification code to your email`
+  String get Verificationcodetoyouremail {
+    return Intl.message(
+      'Verification code to your email',
+      name: 'Verificationcodetoyouremail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We will send verification code to yor email`
+  String get Wewillsendverificationcodetoyoremail {
+    return Intl.message(
+      'We will send verification code to yor email',
+      name: 'Wewillsendverificationcodetoyoremail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Enter Your email`
+  String get EnterYouremail {
+    return Intl.message(
+      ' Enter Your email',
+      name: 'EnterYouremail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Verify`
+  String get SendVerify {
+    return Intl.message(
+      'Send Verify',
+      name: 'SendVerify',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

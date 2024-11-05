@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/approuter.dart';
@@ -9,10 +12,21 @@ import 'package:study_path/firebase_options.dart';
 import 'package:study_path/generated/l10n.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized;
+  WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  final PendingDynamicLinkData? initialLink =
+      await FirebaseDynamicLinks.instance.getInitialLink();
+
+  if (initialLink != null) {
+    final Uri deepLink = initialLink.link;
+    // Example of using the dynamic link to push the user to a different screen
+    print("enter to app againnnn ${deepLink}");
+  }
+
   runApp(
     // DevicePreview(
     // enabled: !kReleaseMode,
@@ -29,7 +43,8 @@ class StudyPathAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        // designSize:  Size(360, 690),
+        designSize: Size(MediaQuery.of(context).size.width,
+            MediaQuery.of(context).size.height),
         minTextAdapt: true,
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context

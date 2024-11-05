@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/generated/l10n.dart';
+import 'package:study_path/utilize/getcources_and_instracture/get_instracture_and_cources.dart';
 
-Widget wishlistitem(context, coursemodel, ontap) {
-  bool active = false;
+Widget wishlistitem(
+    {context, ontap, required CourseAllDetails model, bool active = false}) {
   return Padding(
     padding: EdgeInsets.symmetric(vertical: 7.0.h, horizontal: 10),
     child: SizedBox(
@@ -19,7 +20,7 @@ Widget wishlistitem(context, coursemodel, ontap) {
               borderRadius: BorderRadius.circular(8.r),
             ),
             width: MediaQuery.of(context).size.width,
-            height: 115.h,
+            height: 120.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -29,11 +30,11 @@ Widget wishlistitem(context, coursemodel, ontap) {
                     //height: 150.h,
 
                     decoration: BoxDecoration(
+                        color: ColorApp.neturalcolor3,
                         borderRadius: BorderRadius.circular(8.r),
-                        image: const DecorationImage(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVukrmVSypMEscsW83Ab4Yax36AgUSov1pPw&s"),
+                          image: NetworkImage(model.courseModel!.coverurl!),
                         )),
                   ),
                 ),
@@ -53,7 +54,7 @@ Widget wishlistitem(context, coursemodel, ontap) {
                           child: ListTile(
                             contentPadding: const EdgeInsets.all(0),
                             leading: Text(
-                              coursemodel.coursename!,
+                              model.courseModel!.title!,
                               style: TextStyleConst.textStyleconst14!
                                   .copyWith(fontWeight: FontWeight.w800),
                             ),
@@ -62,12 +63,13 @@ Widget wishlistitem(context, coursemodel, ontap) {
                               return InkWell(
                                 onTap: () {
                                   setstate(() {
-                                    ontap();
                                     active = !active;
                                   });
                                 },
                                 child: Icon(
-                                  Icons.favorite_outline,
+                                  active == true
+                                      ? Icons.favorite_rounded
+                                      : Icons.favorite_outline,
                                   color: active == true
                                       ? ColorApp.primarycolor6
                                       : ColorApp.neturalcolor11,
@@ -81,7 +83,7 @@ Widget wishlistitem(context, coursemodel, ontap) {
                         height: 10.h,
                       ),
                       Text(
-                        coursemodel.instracure!,
+                        model.instractureModel!.name!,
                         style: TextStyleConst.textStyleconst12!.copyWith(
                             color: ColorApp.neturalcolor9,
                             fontWeight: FontWeight.w600),
@@ -90,7 +92,7 @@ Widget wishlistitem(context, coursemodel, ontap) {
                         height: 6.h,
                       ),
                       Text(
-                        coursemodel.time!,
+                        model.courseModel!.time!.toString(),
                         style: TextStyleConst.textStyleconst12!.copyWith(
                             color: ColorApp.neturalcolor11,
                             fontWeight: FontWeight.w600),
@@ -103,7 +105,7 @@ Widget wishlistitem(context, coursemodel, ontap) {
                         child: Row(
                           children: [
                             Text(
-                              coursemodel.price!,
+                              model.courseModel!.price!.toString(),
                               style: TextStyleConst.textStyleconst13!.copyWith(
                                   color: ColorApp.neturalcolor9,
                                   fontWeight: FontWeight.w600,
@@ -113,18 +115,19 @@ Widget wishlistitem(context, coursemodel, ontap) {
                               width: 10.w,
                             ),
                             Text(
-                              coursemodel.descaond!,
+                              model.courseModel!.discount.toString(),
                               style: TextStyleConst.textStyleconst13!.copyWith(
                                   color: ColorApp.neturalcolor12,
                                   fontWeight: FontWeight.w600),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               S.current.BuyNow,
                               style: TextStyleConst.textStyleconst13!.copyWith(
                                   fontWeight: FontWeight.w900,
                                   color: ColorApp.primarycolor6,
-                                  decoration: TextDecoration.underline),
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: ColorApp.primarycolor6),
                             )
                           ],
                         ),

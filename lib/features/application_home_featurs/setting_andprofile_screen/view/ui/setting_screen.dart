@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:study_path/approuter.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/homescreens/data/models/user_model.dart';
 import 'package:study_path/features/application_home_featurs/setting_andprofile_screen/view/ui/setting_widgets/item_with_switch.dart';
 import 'package:study_path/features/application_home_featurs/setting_andprofile_screen/view/ui/setting_widgets/itemofsetting_simple.dart';
 import 'package:study_path/features/application_home_featurs/setting_andprofile_screen/view/ui/setting_widgets/litemofprofile.dart';
 import 'package:study_path/functions/goroute_fun.dart';
 
 class SettingScreen extends StatefulWidget {
-  const SettingScreen({super.key});
-
+  const SettingScreen({super.key, required this.user});
+  final UserModel user;
   @override
   State<SettingScreen> createState() => _SettingScreenState();
 }
@@ -18,16 +20,18 @@ class _SettingScreenState extends State<SettingScreen> {
   bool darkmodel = false;
   bool notfication = false;
   @override
+  void initState() {
+    notfication = widget.user.notfication!;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          // leading: InkWell(
-          //     onTap: () {
-          //       GoRouter.of(context).pop();
-          //     },
-          //     child: const Icon(Icons.arrow_back_ios_new)),
+          leading: const SizedBox(),
           centerTitle: true,
           title: Text(
             "Settings",
@@ -41,18 +45,17 @@ class _SettingScreenState extends State<SettingScreen> {
             ),
             customlisttile_ofprofile(
                 ontap: () {
-                  print("enttwer");
-                  GoR(context: context, name: Approuter.profilescreen);
+                  GoRouter.of(context)
+                      .push(Approuter.profilescreen, extra: widget.user);
                 },
-                img:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVI8wwjmbk07RHjMaoxGcLQw5kRfAizckn7g&s",
-                title: "mostafa salem",
-                subtitle: "mostafasalem39956@gmail.com"),
+                img: widget.user.photourl,
+                title: widget.user.name,
+                subtitle: widget.user.email),
             SizedBox(
               height: 35.h,
             ),
             itemofsettingsscreenwithswich(
-              leadingicondata: Icons.dark_mode,
+              leadingicondata: Icons.dark_mode_outlined,
               text: 'Dark mode',
               active: darkmodel,
               setstate: (bool val) {
@@ -65,7 +68,7 @@ class _SettingScreenState extends State<SettingScreen> {
               height: 10.h,
             ),
             itemofsettingsscreenwithswich(
-              leadingicondata: Icons.notifications,
+              leadingicondata: Icons.notifications_outlined,
               text: 'Notfications',
               active: notfication,
               setstate: (bool val) {
@@ -78,12 +81,12 @@ class _SettingScreenState extends State<SettingScreen> {
               height: 10.h,
             ),
             itemofsettingsscreen(
-                leadingicondata: Icons.privacy_tip_rounded,
+                leadingicondata: Icons.privacy_tip_outlined,
                 text: "Privacy",
                 trailing: Icons.arrow_forward_ios,
                 ontap: () {}),
             SizedBox(
-              height: 10.h,
+              height: 8.h,
             ),
             itemofsettingsscreen(
                 leadingicondata: Icons.security_outlined,
@@ -91,15 +94,15 @@ class _SettingScreenState extends State<SettingScreen> {
                 trailing: Icons.arrow_forward_ios,
                 ontap: () {}),
             SizedBox(
-              height: 10.h,
+              height: 8.h,
             ),
             itemofsettingsscreen(
-                leadingicondata: Icons.info,
+                leadingicondata: Icons.info_outline,
                 text: "About Us",
                 trailing: Icons.arrow_forward_ios,
                 ontap: () {}),
             SizedBox(
-              height: 10.h,
+              height: 8.h,
             ),
             itemofsettingsscreen(
                 leadingicondata: Icons.call_outlined,
@@ -107,10 +110,10 @@ class _SettingScreenState extends State<SettingScreen> {
                 trailing: Icons.arrow_forward_ios,
                 ontap: () {}),
             SizedBox(
-              height: 10.h,
+              height: 8.h,
             ),
             itemofsettingsscreen(
-                leadingicondata: Icons.question_answer,
+                leadingicondata: Icons.support_outlined,
                 text: "Support",
                 trailing: Icons.arrow_forward_ios,
                 ontap: () {}),

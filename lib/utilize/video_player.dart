@@ -12,28 +12,25 @@ import 'package:pod_player/pod_player.dart';
 //   );
 // }
 
-class VideoPlayer extends StatefulWidget {
-  const VideoPlayer({super.key, required this.url});
+class VideoPlayercustom extends StatefulWidget {
+  const VideoPlayercustom(
+      {super.key, required this.url, required this.controller});
   final String url;
+  final PodPlayerController controller;
   @override
-  State<VideoPlayer> createState() => _VideoPlayerState();
+  State<VideoPlayercustom> createState() => _VideoPlayerState();
 }
 
-class _VideoPlayerState extends State<VideoPlayer> {
-  late final PodPlayerController controller;
+//    controller.changeVideo(playVideoFrom: PlayVideoFrom.network());
+class _VideoPlayerState extends State<VideoPlayercustom> {
   @override
   void initState() {
-    controller = PodPlayerController(
-      playVideoFrom: PlayVideoFrom.network(
-        widget.url,
-      ),
-    )..initialise();
     super.initState();
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    widget.controller.dispose();
     super.dispose();
   }
 
@@ -42,7 +39,7 @@ class _VideoPlayerState extends State<VideoPlayer> {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: PodVideoPlayer(
-        controller: controller,
+        controller: widget.controller,
       ),
     );
   }

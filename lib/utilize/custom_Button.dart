@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:study_path/const/color_app.dart';
 
 Widget CustomButtom(
-    {required Function() onpress,
+    {Function()? onpress,
     required Widget text,
     required double w,
     required double h,

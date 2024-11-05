@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
+import 'package:study_path/utilize/gineralmodels/courcemodel.dart';
 
 Widget articlesbody(
-    {required List listofarticles, required BuildContext context}) {
+    {required BuildContext context,
+    required List<resourcesleModel> resources}) {
   return ListView.builder(
-      itemCount: 10,
+      itemCount: resources.length,
       itemBuilder: (context, i) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: itemofarticle(
               context: context,
-              title: 'The element of user experince',
-              name: 'By of john',
-              info: 'This article provided by antynous',
+              title: resources[i].title!,
+              name: resources[i].nameauther!,
+              info: resources[i].description!,
               ontap: () {}),
         );
       });

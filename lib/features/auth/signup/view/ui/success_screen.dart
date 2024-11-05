@@ -14,58 +14,65 @@ class CreatedAcountSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
+        height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 50.h,
-            ),
-            Text(
-              "Success",
-              style: TextStyleConst.textStyleconst22,
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Text(
-              "Your Acount has been created pleas check your email  and log in again",
-              style: TextStyleConst.textStyleconst17!
-                  .copyWith(color: ColorApp.neturalcolor10),
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            Container(
-              width: 150.w,
-              height: 150.h,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: ColorApp.primarycolor6, width: 3)),
-              child: Center(
-                child: Icon(Icons.done_outlined,
-                    size: 35, color: ColorApp.primarycolor6),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.0.w, vertical: 20.h),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 130.h,
               ),
-            ),
-            Spacer(),
-            CustomButtom(
-                onpress: () {
-                  GoR(
-                    context: context,
-                    name: Approuter.signin,
-                  );
-                },
-                text: Text(
-                  S.current.LogIn,
-                  style: TextStyleConst.textStyleconst17,
+              Text(
+                "Success",
+                style: TextStyleConst.textStyleconst25,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Text(
+                "Your Acount has been created pleas check your email  and login again",
+                textAlign: TextAlign.center,
+                style: TextStyleConst.textStyleconst16!
+                    .copyWith(color: ColorApp.neturalcolor10),
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              Container(
+                width: 200.w,
+                height: 200.h,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border:
+                        Border.all(color: ColorApp.primarycolor6, width: 3.5)),
+                child: Center(
+                  child: Icon(Icons.done_outlined,
+                      size: 65, color: ColorApp.primarycolor6),
                 ),
-                w: 140.w,
-                h: 50.h,
-                colordata: ColorApp.primarycolor6),
-            SizedBox(
-              height: 10.h,
-            ),
-          ],
+              ),
+              const Spacer(),
+              CustomButtom(
+                  onpress: () {
+                    GoRR(
+                      context: context,
+                      name: Approuter.signin,
+                    );
+                  },
+                  text: Text(
+                    S.current.LogIn,
+                    style: TextStyleConst.textStyleconst18!
+                        .copyWith(color: Colors.white),
+                  ),
+                  w: MediaQuery.of(context).size.width,
+                  h: 50.h,
+                  colordata: ColorApp.primarycolor6),
+              SizedBox(
+                height: 10.h,
+              ),
+            ],
+          ),
         ),
       ),
     );

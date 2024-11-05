@@ -6,25 +6,25 @@ import 'package:study_path/const/fontstyleconst.dart';
 // ignore: non_constant_identifier_names
 Widget ComentcustomWidget({img, title, review, required String time, coment}) {
   return Column(
-    crossAxisAlignment: CrossAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       ListTile(
         contentPadding: EdgeInsets.zero,
         leading: CircleAvatar(
           backgroundImage: NetworkImage(img),
-          radius: 30.r,
+          radius: 27.r,
           backgroundColor: Colors.white,
         ),
         title: Text(
           title,
-          style: TextStyleConst.textStyleconst17,
+          style: TextStyleConst.textStyleconst15,
         ),
         subtitle: starreview(count: review),
         trailing: Padding(
-          padding: EdgeInsets.only(top: 12.0.h),
+          padding: EdgeInsets.only(top: 12.0.h, left: 3, right: 3),
           child: Text(
-            time,
-            style: TextStyleConst.textStyleconst12!
+            "${time}m",
+            style: TextStyleConst.textStyleconst11!
                 .copyWith(color: ColorApp.neturalcolor12),
           ),
         ),
@@ -55,7 +55,7 @@ Widget starreview({required double count}) {
           return Icon(
             Icons.star,
             color: countr < 0 ? ColorApp.neturalcolor9 : Colors.yellow[300],
-            size: 19.r,
+            size: 18.r,
           );
         }),
       ),
@@ -64,7 +64,7 @@ Widget starreview({required double count}) {
       ),
       Text(
         count.toString(),
-        style: TextStyleConst.textStyleconst13,
+        style: TextStyleConst.textStyleconst12,
       )
     ],
   );

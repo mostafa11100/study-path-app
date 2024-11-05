@@ -9,6 +9,7 @@ Widget rememberandforgetpassword() {
       height: 20.sp,
       width: 20.sp,
       child: Checkbox(
+          side: BorderSide(color: ColorApp.neturalcolor10),
           activeColor: ColorApp.primarycolor4,
           value: checkval,
           onChanged: (v) {

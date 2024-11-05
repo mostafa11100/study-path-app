@@ -49,15 +49,24 @@ dependencies:
   calendar_date_picker2: ^1.1.7
   syncfusion_flutter_sliders: ^26.2.12
   smart_player: ^0.0.9+1
-  firebase_core: ^3.5.0
-  firebase_auth: ^5.3.0
   either_dart: ^1.0.0
-  cloud_firestore: ^5.4.2
-  google_sign_in: ^6.2.1
-  flutter_facebook_auth: ^7.1.1
   awesome_dialog: ^3.2.1
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
+  shared_preferences: ^2.3.2
+ 
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.3
+  firebase_core: ^3.6.0
+  google_sign_in: ^6.2.1
+  flutter_facebook_auth: ^7.1.1
+  meta: ^1.15.0
+  http: ^1.2.2
+  url_launcher: ^6.3.1
+  firebase_dynamic_links: ^6.0.8
+  msh_checkbox: ^2.0.1
+  pie_chart: ^5.4.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -89,6 +98,10 @@ flutter:
     - assets/images/securitydone_image.png
     - assets/images/forgetpassword.png
     - assets/images/course_item.png
+    - assets/images/forgepass_image.webp
+    - assets/images/forgetpas.png
+    - assets/images/paypal.png
+    - assets/images/stripe-logo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

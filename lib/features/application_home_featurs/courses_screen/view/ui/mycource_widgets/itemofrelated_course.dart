@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/generated/l10n.dart';
+import 'package:study_path/utilize/getcources_and_instracture/get_instracture_and_cources.dart';
 
-Widget itemofrelatedcource(context, coursemodel, ontap) {
+Widget itemofrelatedcource(context, ontap, CourseAllDetails cources) {
   bool active = false;
   return Padding(
-    padding: EdgeInsets.symmetric(vertical: 7.0.h, horizontal: 10),
+    padding: EdgeInsets.symmetric(vertical: 7.0.h, horizontal: 0),
     child: SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -29,11 +30,11 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                     //height: 150.h,
 
                     decoration: BoxDecoration(
+                        color: ColorApp.neturalcolor2,
                         borderRadius: BorderRadius.circular(8.r),
-                        image: const DecorationImage(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVukrmVSypMEscsW83Ab4Yax36AgUSov1pPw&s"),
+                          image: NetworkImage(cources.courseModel!.coverurl!),
                         )),
                   ),
                 ),
@@ -53,7 +54,7 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                           child: ListTile(
                             contentPadding: const EdgeInsets.all(0),
                             leading: Text(
-                              coursemodel.coursename!,
+                              cources.courseModel!.title!,
                               style: TextStyleConst.textStyleconst13!
                                   .copyWith(fontWeight: FontWeight.w800),
                             ),
@@ -81,7 +82,7 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                         height: 10.h,
                       ),
                       Text(
-                        coursemodel.instracure!,
+                        cources.instractureModel!.name!,
                         style: TextStyleConst.textStyleconst11!.copyWith(
                             color: ColorApp.neturalcolor9,
                             fontWeight: FontWeight.w600),
@@ -90,7 +91,7 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                         height: 6.h,
                       ),
                       Text(
-                        coursemodel.time!,
+                        cources.courseModel!.time!.toString(),
                         style: TextStyleConst.textStyleconst11!.copyWith(
                             color: ColorApp.neturalcolor11,
                             fontWeight: FontWeight.w600),
@@ -101,7 +102,7 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                       Row(
                         children: [
                           Text(
-                            coursemodel.price!,
+                            cources.courseModel!.price!.toString(),
                             style: TextStyleConst.textStyleconst13!.copyWith(
                                 color: ColorApp.neturalcolor9,
                                 fontWeight: FontWeight.w600,
@@ -111,7 +112,7 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                             width: 10.w,
                           ),
                           Text(
-                            coursemodel.descaond!,
+                            cources.courseModel!.discount!.toString(),
                             style: TextStyleConst.textStyleconst13!.copyWith(
                                 color: ColorApp.neturalcolor12,
                                 fontWeight: FontWeight.w600),
@@ -122,9 +123,11 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
                           Text(
                             S.current.BuyNow,
                             style: TextStyleConst.textStyleconst11!.copyWith(
-                                fontWeight: FontWeight.w900,
-                                color: ColorApp.primarycolor6,
-                                decoration: TextDecoration.underline),
+                              fontWeight: FontWeight.w900,
+                              color: ColorApp.primarycolor6,
+                              decoration: TextDecoration.underline,
+                              decorationColor: ColorApp.primarycolor6,
+                            ),
                           )
                         ],
                       ),
@@ -137,16 +140,21 @@ Widget itemofrelatedcource(context, coursemodel, ontap) {
           SizedBox(
             height: 10.h,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "publeshed yesterday",
-                style: TextStyleConst.textStyleconst13!
-                    .copyWith(fontWeight: FontWeight.w600),
-              ),
-              const Icon(Icons.cloud_upload_outlined)
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 3.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "publeshed yesterday",
+                  style: TextStyleConst.textStyleconst12!.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: ColorApp.neturalcolor11),
+                ),
+                Icon(Icons.cloud_upload_outlined,
+                    color: ColorApp.neturalcolor11)
+              ],
+            ),
           )
         ],
       ),

@@ -4,9 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:study_path/approuter.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
 import 'package:study_path/functions/goroute_fun.dart';
 
-Widget bodyofmore(context) {
+Widget bodyofmore({context, required CourseModel model}) {
   return Padding(
     padding: EdgeInsets.only(bottom: 70.h),
     child: Column(
@@ -41,7 +42,8 @@ Widget bodyofmore(context) {
             icondata: Icons.list_outlined,
             label: "Resources",
             ontap: () {
-              GoR(context: context, name: Approuter.resourcesscreen);
+              GoRouter.of(context)
+                  .push(Approuter.resourcesscreen, extra: model);
             }),
         SizedBox(
           height: 10.h,

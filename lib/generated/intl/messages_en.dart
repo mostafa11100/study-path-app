@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don\'\'t have an acount"),
         "Emailorphonenumber":
             MessageLookupByLibrary.simpleMessage("E-mail or phone number"),
+        "EnterYouremail":
+            MessageLookupByLibrary.simpleMessage(" Enter Your email"),
         "EnteryourverificationCode": MessageLookupByLibrary.simpleMessage(
             "Enter your verification Code"),
         "Featuredcourses":
@@ -64,14 +66,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "Relatedcources":
             MessageLookupByLibrary.simpleMessage("Related cources"),
         "Resendcode": MessageLookupByLibrary.simpleMessage("Resend code"),
+        "SendVerify": MessageLookupByLibrary.simpleMessage("Send Verify"),
         "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
         "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "Tracking": MessageLookupByLibrary.simpleMessage("Tracking"),
+        "Verificationcodetoyouremail": MessageLookupByLibrary.simpleMessage(
+            "Verification code to your email"),
         "VerifyByphonecall":
             MessageLookupByLibrary.simpleMessage("Verify By phone call"),
         "Verifycode": MessageLookupByLibrary.simpleMessage("Verify code"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome To StudyPath"),
         "Welcomeback": MessageLookupByLibrary.simpleMessage("Welcome back"),
+        "Wewillsendverificationcodetoyoremail":
+            MessageLookupByLibrary.simpleMessage(
+                "We will send verification code to yor email"),
         "orloginwith": MessageLookupByLibrary.simpleMessage("Or login with"),
         "rememberme": MessageLookupByLibrary.simpleMessage("Remember me"),
         "selectmethode": MessageLookupByLibrary.simpleMessage(

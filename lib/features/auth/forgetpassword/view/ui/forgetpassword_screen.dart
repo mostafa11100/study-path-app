@@ -106,7 +106,7 @@ class ForgetpasswordScreen extends StatelessWidget {
                 w: MediaQuery.of(context).size.width,
                 h: 50.h,
                 colordata: ColorApp.primarycolor6),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Row(

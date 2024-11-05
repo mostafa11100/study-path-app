@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:language_picker/language_picker_dropdown.dart';
 import 'package:language_picker/languages.dart';
 import 'package:study_path/approuter.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/homescreens/data/models/user_model.dart';
 import 'package:study_path/features/application_home_featurs/setting_andprofile_screen/view/ui/setting_widgets/itemofsetting_simple.dart';
 import 'package:study_path/functions/goroute_fun.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
+  const ProfileScreen({super.key, required this.user});
+  final UserModel user;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,21 +37,20 @@ class ProfileScreen extends StatelessWidget {
               ),
               CircleAvatar(
                 radius: 50.r,
-                backgroundImage: const NetworkImage(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVI8wwjmbk07RHjMaoxGcLQw5kRfAizckn7g&s"),
+                backgroundImage: NetworkImage(user.photourl!),
               ),
               SizedBox(
                 height: 10.h,
               ),
               Text(
-                "Mostafa salem",
+                user.name!,
                 style: TextStyleConst.textStyleconst20,
               ),
               SizedBox(
                 height: 5.h,
               ),
               Text(
-                "Mostafasalem39@gmail.com",
+                user.email!,
                 style: TextStyleConst.textStyleconst12!
                     .copyWith(color: ColorApp.neturalcolor10),
               ),
@@ -63,9 +64,8 @@ class ProfileScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: ColorApp.primarycolor6),
                       onPressed: () {
-                        GoR(
-                            context: context,
-                            name: Approuter.editprofilescreen);
+                        GoRouter.of(context)
+                            .push(Approuter.editprofilescreen, extra: user);
                       },
                       child: Text(
                         "Edit Profile",
@@ -81,6 +81,7 @@ class ProfileScreen extends StatelessWidget {
                 ontap: (Language language) {
                   //_selectedDropdownLanguage = language;
                 },
+                lang: user.language!,
               ),
               SizedBox(
                 height: 14.h,
@@ -119,6 +120,7 @@ class ProfileScreen extends StatelessWidget {
 Widget itemoflanguage(
     {required IconData leadingicondata,
     required String text,
+    required String lang,
     required Function(Language language) ontap}) {
   return ListTile(
     leading: Icon(
@@ -133,10 +135,27 @@ Widget itemoflanguage(
       width: 80.w,
       height: 40.h,
       child: LanguagePickerDropdown(
-          initialValue: Languages.english,
+          initialValue: getlang(lang),
           // itemBuilder: _buildDropdownItem,
           onValuePicked: ontap),
     ),
     horizontalTitleGap: 20.r,
   );
+}
+
+Language getlang(code) {
+  Language lang;
+  switch (code) {
+    case "en":
+      lang = Languages.english;
+      break;
+
+    case "ar":
+      lang = Languages.arabic;
+      break;
+    default:
+      lang = Languages.arabic;
+      break;
+  }
+  return lang;
 }

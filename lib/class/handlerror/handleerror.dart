@@ -1,46 +1,75 @@
 class Handleerror {
   String? eror;
   Handleerror(this.eror);
+
   static Handleerror fromjson(String error) {
     switch (error) {
       case 'weak-password':
-        return Handleerror("The password provided is too weak.");
+        return Handleerror(
+            "The password is too weak. Please choose a stronger one.");
 
       case "email-already-in-use":
-        return Handleerror("The account already exists for that email");
+        return Handleerror(
+            "This email is already registered. Please use a different email.");
 
       case "invalid-email":
-        return Handleerror("the email address is not valid");
+        return Handleerror(
+            "The email address is not valid. Please check the email format.");
+
       case "too-many-requests":
         return Handleerror(
-            " sent too many requests at the same time, for security the api will not allow too many attemps at the same time, user will have to wait for some time");
+            "You have made too many requests in a short time. Please wait and try again later.");
+
       case "network-request-failed":
         return Handleerror(
-            "Thrown if there was a network request error, for example the user don't don't have internet connection");
+            "Network error. Please check your internet connection and try again.");
 
       case "operation-not-allowed":
         return Handleerror(
-            "Thrown if email/password accounts are not enabled. Enable email/password accounts in the Firebase Console, under the Auth tab");
+            "Email and password sign-in is not enabled. Please enable it in Firebase Console.");
+
       case "account-exists-with-different-credential":
         return Handleerror(
-            "Thrown if there already exists an account with the email address asserted by the credential. Resolve this by calling [fetchSignInMethodsForEmail] and then asking the user to sign in using one of the returned providers. Once the user is signed in, the original credential can be linked to the user with [linkWithCredential].");
+            "An account already exists with this email using a different sign-in method. Please sign in using the correct method.");
 
       case "invalid-credential":
         return Handleerror(
-            "Thrown if the credential is malformed or has expired");
+            "The credentials provided are invalid or have expired. Please try again.");
 
       case "user-disabled":
         return Handleerror(
-            "Thrown if the user corresponding to the given credential has been disabled.");
+            "This account has been disabled. Please contact support for assistance.");
+
       case "user-not-found":
         return Handleerror(
-            "Thrown if signing in with a credential from [EmailAuthProvider.credential] and there is no user corresponding to the given email.");
+            "No user found with this email. Please check the email or sign up for a new account.");
+
       case "invalid-verification-code":
         return Handleerror(
-            "he verification code of the credential is not valid");
+            "The verification code is invalid. Please check and try again.");
+
       case "invalid-verification-id":
         return Handleerror(
-            "he verification ID of the credential is not valid.id");
+            "The verification ID is invalid. Please check and try again.");
+
+      case 'auth/invalid-email':
+        return Handleerror(
+            "The email address is invalid. Please check the format.");
+
+      case 'expired-action-code':
+        return Handleerror(
+            "The password reset code has expired. Please request a new one.");
+
+      case 'invalid-action-code':
+        return Handleerror(
+            "The password reset code is invalid or has already been used. Please request a new one.");
+
+      case 'auth/missing-android-pkg-name':
+        return Handleerror(
+            "An Android package name is required if the Android app needs to be installed.");
+
+      case 'auth/missing-continue-uri':
+        return Handleerror("A continue URL is required in the request");
 
       default:
         return Handleerror(error);

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 
-Widget listtile_ofuserinfo({ontap, image, name}) {
+Widget listtile_ofuserinfo({ontap, image, name, bio}) {
   //المفروض الاسم والصوره هيكونو ف موديل
   return Builder(builder: (context) {
     return ListTile(
@@ -23,7 +23,7 @@ Widget listtile_ofuserinfo({ontap, image, name}) {
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 4.0, bottom: 0),
         child: Text(
-          name,
+          bio,
           style: TextStyleConst.textStyleconst14!
               .copyWith(color: ColorApp.neturalcolor10),
         ),

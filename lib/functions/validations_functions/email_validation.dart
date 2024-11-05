@@ -1,8 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:study_path/functions/validations_functions/validate_mopile.dart';
 
-String? emailvalidation(email) {
-  bool valid = EmailValidator.validate(email);
+String? emailvalidation(String? email) {
+  bool valid = EmailValidator.validate(email!);
   if (!valid) {
     if (validateMobile(email) != null) {
       return "Please enter a valid email address or  phone number";
@@ -10,6 +10,7 @@ String? emailvalidation(email) {
       return "phone";
     }
   } else {
-    return "email";
+    return null;
+    // return "email";
   }
 }

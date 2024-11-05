@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 
 Widget itemofsettingsscreen(
@@ -11,16 +12,17 @@ Widget itemofsettingsscreen(
     onTap: ontap,
     leading: Icon(
       leadingicondata,
-      size: 26.r,
+      color: ColorApp.neturalcolor10,
+      size: 24.r,
     ),
     title: Text(
       text,
-      style: TextStyleConst.textStyleconst15,
+      style: TextStyleConst.textStyleconst14,
     ),
     trailing: Icon(
       trailing,
-      size: 26.r,
+      size: 23.r,
     ),
-    horizontalTitleGap: 20.r,
+    horizontalTitleGap: 18.r,
   );
 }

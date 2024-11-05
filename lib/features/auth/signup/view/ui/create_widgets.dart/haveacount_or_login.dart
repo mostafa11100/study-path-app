@@ -16,6 +16,7 @@ Widget haveAcountorlogin() {
         ),
         const Spacer(),
         InkWell(
+          hoverColor: Colors.white,
           onTap: () {
             GoR(context: context, name: Approuter.signin);
           },

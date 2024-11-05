@@ -12,4 +12,15 @@ class SendverifyEmail {
     }
     return null;
   }
+
+  static Future<Handleerror?> sendcodetoemail({required String email}) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      return Handleerror.fromjson(e.code);
+    } catch (e) {
+      return Handleerror.fromjson(e.toString());
+    }
+    return null;
+  }
 }

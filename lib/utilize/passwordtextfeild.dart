@@ -5,7 +5,8 @@ import 'package:study_path/const/color_app.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 
 // ignore: non_constant_identifier_names
-Widget PasswordTextfeild({controler, label, validator}) {
+Widget PasswordTextfeild(
+    {controler, label, String? Function(String?)? validator}) {
   bool obsecure = true;
   return StatefulBuilder(builder: (context, setstate) {
     return TextFormField(
@@ -31,7 +32,7 @@ Widget PasswordTextfeild({controler, label, validator}) {
         contentPadding: EdgeInsets.symmetric(vertical: 4.h),
         floatingLabelStyle: TextStyleConst.textStyleconst17!,
         labelStyle: TextStyleConst.textStyleconst13!
-            .copyWith(color: ColorApp.neturalcolor10, height: 1.2.h),
+            .copyWith(color: ColorApp.neturalcolor9, height: 1.2.h),
         border: InputBorder.none,
         focusedErrorBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: ColorApp.primarycolor6, width: .8.r)),

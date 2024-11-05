@@ -4,3 +4,7 @@ import 'package:go_router/go_router.dart';
 GoR({required BuildContext context, required String name}) {
   GoRouter.of(context).push(name);
 }
+
+GoRR({required BuildContext context, required String name}) {
+  GoRouter.of(context).pushReplacement(name);
+}

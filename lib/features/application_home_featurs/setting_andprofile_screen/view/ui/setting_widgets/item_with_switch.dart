@@ -11,34 +11,19 @@ Widget itemofsettingsscreenwithswich(
   return ListTile(
     leading: Icon(
       leadingicondata,
-      size: 26.r,
+      color: ColorApp.neturalcolor10,
+      size: 24.r,
     ),
     title: Text(
       text,
-      style: TextStyleConst.textStyleconst15,
+      style: TextStyleConst.textStyleconst14,
     ),
     trailing: Transform.scale(
-      scale: .8,
+      scale: .7,
       child: Switch(
           trackOutlineColor: WidgetStateColor.resolveWith((s) {
-            // if (s.contains(WidgetState.pressed)) {
-            //   return Colors.white;
-            // }
-            // if (s.contains(WidgetState.hovered)) {
-            //   return Colors.white;
-            // }
             return Colors.white;
           }),
-          // thumb color (round icon)
-          // thumbColor: WidgetStateColor.resolveWith((s) {
-          //   if (s.contains(WidgetState.pressed)) {
-          //     return Colors.white;
-          //   }
-          //   if (s.contains(WidgetState.hovered)) {
-          //     return Colors.white;
-          //   }
-          //   return Colors.white;
-          // }),
           activeColor: Colors.white,
           activeTrackColor: ColorApp.primarycolor6,
           inactiveThumbColor: Colors.white,
@@ -49,6 +34,6 @@ Widget itemofsettingsscreenwithswich(
           // changes the state of the switch
           onChanged: setstate),
     ),
-    horizontalTitleGap: 20.r,
+    horizontalTitleGap: 18.r,
   );
 }

@@ -1,13 +1,13 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/fontstyleconst.dart';
+import 'package:study_path/features/application_home_featurs/homescreens/data/models/course_model.dart';
 import 'package:study_path/features/application_home_featurs/resources_screen/view/ui/resources_widgets/articles_body.dart';
 import 'package:study_path/features/application_home_featurs/resources_screen/view/ui/resources_widgets/customtabBarofresources.dart';
 
 class ResourcesScreen extends StatefulWidget {
-  const ResourcesScreen({super.key});
-
+  const ResourcesScreen({super.key, required this.model});
+  final CourseModel model;
   @override
   State<ResourcesScreen> createState() => _ResourcesScreenState();
 }
@@ -36,8 +36,9 @@ class _ResourcesScreenState extends State<ResourcesScreen>
         body: Padding(
           padding: EdgeInsets.all(15.w),
           child: TabBarView(controller: tabController, children: [
-            articlesbody(listofarticles: [], context: context),
-            articlesbody(listofarticles: [], context: context),
+            articlesbody(
+                resources: widget.model.listofarticles, context: context),
+            articlesbody(resources: widget.model.listofbooks, context: context),
           ]),
         ));
   }

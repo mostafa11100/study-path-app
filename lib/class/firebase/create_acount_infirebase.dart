@@ -40,6 +40,7 @@ class CreateAcountInfirebase {
     } on FirebaseAuthException catch (e) {
       return Right(Handleerror(e.code));
     } catch (e) {
+      print("errrrrrror   ${e.toString()}");
       return Right(Handleerror(e.toString()));
     }
   }

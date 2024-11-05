@@ -13,14 +13,15 @@ Widget TextFeildCustom_editing({controler, hint, label, validator, security}) {
       validator: validator,
       decoration: InputDecoration(
           suffixIcon: Icon(
-            Icons.edit_rounded,
-            size: 20.r,
+            Icons.edit_outlined,
+            color: ColorApp.neturalcolor10,
+            size: 18.r,
           ),
           labelText: label,
           contentPadding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 1.w),
           floatingLabelStyle: TextStyleConst.textStyleconst17!,
           labelStyle: TextStyleConst.textStyleconst13!
-              .copyWith(color: ColorApp.neturalcolor10, height: 1.2.h),
+              .copyWith(color: ColorApp.neturalcolor9, height: 1.2.h),
           border: InputBorder.none,
           focusedErrorBorder: UnderlineInputBorder(
               borderSide:
@@ -29,7 +30,7 @@ Widget TextFeildCustom_editing({controler, hint, label, validator, security}) {
               borderSide: BorderSide(color: ColorApp.erroscolor5, width: .8.r)),
           enabledBorder: UnderlineInputBorder(
               borderSide:
-                  BorderSide(color: ColorApp.neturalcolor10, width: .8.r)),
+                  BorderSide(color: ColorApp.neturalcolor9, width: .8.r)),
           focusedBorder: UnderlineInputBorder(
               borderSide:
                   BorderSide(color: ColorApp.primarycolor6, width: .8.r)),

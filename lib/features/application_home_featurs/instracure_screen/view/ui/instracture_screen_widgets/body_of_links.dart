@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_path/const/fontstyleconst.dart';
 import 'package:study_path/const/images_assets.dart';
+import 'package:study_path/features/application_home_featurs/instracure_screen/data/models/instracturemodel.dart';
 
-Widget bodyofsociallinks({required List links, context}) {
+Widget bodyofsociallinks({required InstractureModel model, context}) {
   return SizedBox(
     width: MediaQuery.of(context).size.width,
     child: ListView.builder(
-        itemCount: 4,
+        itemCount: model.socialMediamodel!.listoflinks.length,
         itemBuilder: (context, i) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: socailmedia(
-                ontap: () {},
-                type: i % 2 == 0
-                    ? socialmediatype.FaceBook
-                    : socialmediatype.Linkedin),
+                ontap: () {
+                  //go to links
+                  //model.socialMediamodel!.listoflinks[i]..link
+                },
+                type: model.socialMediamodel!.listoflinks[i].type),
           );
         }),
   );
@@ -33,7 +35,7 @@ Widget? socailmedia({ontap, socialmediatype? type}) {
             height: 30.h,
             child: Image.asset(ImagesAssets.linedin),
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             "Linkedin",
             style: TextStyleConst.textStyleconst16,
@@ -50,7 +52,7 @@ Widget? socailmedia({ontap, socialmediatype? type}) {
           height: 30.h,
           child: Image.asset(ImagesAssets.facebook),
         ),
-        Spacer(),
+        const Spacer(),
         Text(
           "FaceBook",
           style: TextStyleConst.textStyleconst16,
@@ -61,4 +63,5 @@ Widget? socailmedia({ontap, socialmediatype? type}) {
   return null;
 }
 
+// ignore: camel_case_types, constant_identifier_names
 enum socialmediatype { FaceBook, Linkedin }

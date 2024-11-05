@@ -18,17 +18,18 @@ Widget progressSliderState(
           children: [
             Text(
               "Excelent",
-              style: TextStyleConst.textStyleconst16,
+              style: TextStyleConst.textStyleconst15,
             ),
             const Spacer(),
             SizedBox(
+              height: 4,
               width: MediaQuery.of(context).size.width / 1.6,
               child: LinearProgressIndicator(
                 borderRadius: BorderRadius.circular(8.r),
                 value: excelent,
                 backgroundColor: Colors.grey[300], // لون الخلفية
                 color: ColorApp.sucesscolor6, // لون التقدم
-                minHeight: 4.5.h, // ارتفاع الشريط
+                minHeight: 4.2.h, // ارتفاع الشريط
               ),
             ),
           ],
@@ -40,11 +41,12 @@ Widget progressSliderState(
           children: [
             Text(
               "Very Good",
-              style: TextStyleConst.textStyleconst16,
+              style: TextStyleConst.textStyleconst15,
             ),
             const Spacer(),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1.6,
+              height: 4,
               child: LinearProgressIndicator(
                 borderRadius: BorderRadius.circular(8.r),
                 value: verygood,
@@ -62,11 +64,12 @@ Widget progressSliderState(
           children: [
             Text(
               "Good",
-              style: TextStyleConst.textStyleconst16,
+              style: TextStyleConst.textStyleconst15,
             ),
             const Spacer(),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1.6,
+              height: 4,
               child: LinearProgressIndicator(
                 borderRadius: BorderRadius.circular(8.r),
                 value: good,
@@ -84,11 +87,12 @@ Widget progressSliderState(
           children: [
             Text(
               "Poor",
-              style: TextStyleConst.textStyleconst16,
+              style: TextStyleConst.textStyleconst15,
             ),
             const Spacer(),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1.6,
+              height: 4,
               child: LinearProgressIndicator(
                 borderRadius: BorderRadius.circular(8.r),
                 value: poor,
